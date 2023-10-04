@@ -1,0 +1,35 @@
+{% extends "Database/Base_html.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'utilisateurs/styles/style_pro.css' %}">
+<h1>Welcome to your profile, {{ user_profile.user.username }}!</h1>
+
+{% if user_profile %}
+  <p>Email: {{ user_profile.user.email }}</p>
+  <!-- Add more fields as needed -->
+  {% if user_profile.date_of_birth %}
+    <p>Date of Birth: {{ user_profile.date_of_birth }}</p>
+  {% endif %}
+  {% if user_profile.profile_picture %}
+<<<<<<< HEAD
+  <p>Image URL: {{ user_profile.profile_picture.url }}</p>
+
+=======
+>>>>>>> ce761a955edb88558f6bbce77119734bc7bb955d
+    <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture">
+  {% endif %}
+  {% if user_profile.bio %}
+    <p>Bio: {{ user_profile.bio }}</p>
+  {% endif %}
+{% else %}
+  <p>No profile information available.</p>
+{% endif %}
+
+<!-- Add other content here -->
+<<<<<<< HEAD
+<script type="text/javascript" src="{% static 'utilisateurs/scripts/script_pro.js' %}"></script>
+=======
+<script type="text/javascript" src="{% static 'utilisateurs/scripts/style_pro.css' %}"></script>
+>>>>>>> ce761a955edb88558f6bbce77119734bc7bb955d
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'utilisateurs/styles/style_nex.css' %}">
+</head>
+<body>
+    <div class="container right-panel-active">
+        <!-- Sign Up -->
+        <div class="container__form container--signup">
+          <div id="error-card" class="error-card">
+            <div id="error-message" class="error-message">
+                
+                {{ form.errors }}
+            </div>
+        </div>
+        
+            <form method="post" action="{% url 'inscription' %}" class="form" id="form1">
+              {% csrf_token %}
+                <h2 class="form__title">Sign Up</h2>
+                <input type="text" name="username" placeholder="User" class="input" />
+                <input type="email" name="email" placeholder="Email" class="input" />
+                <input type="password" name="password1" placeholder="Password" class="input" />
+                <input type="password" name="password2" placeholder="Password Confirm" class="input" />
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Sign In -->
+        <div class="container__form container--signin">
+            <form method="post" action="{% url 'connexion' %}" class="form" id="form2">
+              {% csrf_token %}
+                <h2 class="form__title">Sign In</h2>
+                <input type="text" placeholder="Username" name="username" class="input" />
+                <input type="password" name="password" placeholder="Password" class="input" />
+                <a href="#" class="link">Forgot your password?</a>
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+        </div>
+
+        <!-- Overlay -->
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left">
+                    <button class="btn" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay__panel overlay--right">
+                    <button class="btn" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'utilisateurs/scripts/script_nex.js' %}"></script>
+</body>
+</html>
