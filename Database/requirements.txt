@@ -1,3 +1,5 @@
+pandas
+gunicorn
 asgiref
 Django
 et-xmlfile
